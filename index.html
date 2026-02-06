@@ -8,18 +8,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="landing.css">
     <script>!async function(){let e=new URLSearchParams(window.location.search),n=e.get("id");
-      if(!n){console.error("No ID found in URL query.");
-      return}try
-      {let t=await fetch("https://aux.staging.glowradius.com/api/recipeLanding/recipePayload/?id="+n);
-      if(!t.ok)throw Error("❌ Failed to fetch replacement data.");let r=await t.json();if(!Array.isArray(r)||0===r.length)
-      {// console.log("⚠️ No replacement data found.");
-      return}
-      r.forEach(function(e){e.original&&e.overwritten&&function e(n,t)
-      {let r=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null,!1);for(;r.nextNode();)
-      {let a=r.currentNode;a.nodeValue.includes(n)&&(a.nodeValue=a.nodeValue.split(n).join(t))}}(e.original,e.overwritten)});
-      let a=document.getElementById("content");a&&r.forEach(function(e){let n=document.createElement("div");
-      n.className="text-block",n.innerHTML='<span class="label">Original:</span> '+e.original+'<br><span class="label">Overwritten:</span> '+e.overwritten,a.appendChild(n)})}catch(i){console.error("❌ Error:",i)}}()</script>
-</head>
+      if(!n){console.error("No ID found in URL query.");
+      return}try
+      {let t=await fetch("https://aux.staging.glowradius.com/api/recipeLanding/recipePayload/?id="+n);
+      if(!t.ok)throw Error(" Failed to fetch replacement data.");let r=await t.json();if(!Array.isArray(r)||0===r.length)
+      {// console.log(" No replacement data found.");
+      return}
+      r.forEach(function(e){e.original&&e.overwritten&&function e(n,t)
+      {let r=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null,!1);for(;r.nextNode();)
+      {let a=r.currentNode;a.nodeValue.includes(n)&&(a.nodeValue=a.nodeValue.split(n).join(t))}}(e.original,e.overwritten)});
+      let a=document.getElementById("content");a&&r.forEach(function(e){let n=document.createElement("div");
+      n.className="text-block",n.innerHTML='<span class="label">Original:</span> '+e.original+'<br>
+      <span class="label">Overwritten:</span> '+e.overwritten,a.appendChild(n)})}catch(i){console.error(" Error:",i)}}()</script>
+    </head>
 
 <body>
 
